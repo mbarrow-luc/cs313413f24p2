@@ -30,3 +30,6 @@ same as previous
 
 at SIZE <= 10^3 and REPS <= 10^6...
 all tests < 1s
+
+after refactor to DRY...
+all results same as above

@@ -12,7 +12,7 @@ public class TestPerformance {
   // run test and record running times for SIZE = 10, 100, 1000, 10000, ...
   // (choose in conjunction with REPS below up to an upper limit where the clock
   // running time is in the tens of seconds)
-  // TODO (optional) refactor to DRY
+  // (optional) refactor to DRY
   // which of the two lists performs better as the size increases?
   private final int SIZE = 10000;
 
@@ -40,35 +40,37 @@ public class TestPerformance {
     linkedList = null;
   }
 
+  private void testListAddRemove(List<Integer> list) {
+    for (var r = 0; r < REPS; r++) {
+      list.add(0, 77);
+      list.remove(0);
+    }
+  }
+
+  private void testListAccess(List<Integer> list) {
+    var sum = 0L;
+    for (var r = 0; r < REPS; r++) {
+      sum += list.get(r % SIZE);
+    }
+  }
+
   @Test
   public void testLinkedListAddRemove() {
-    for (var r = 0; r < REPS; r++) {
-      linkedList.add(0, 77);
-      linkedList.remove(0);
-    }
+    testListAddRemove(linkedList);
   }
 
   @Test
   public void testArrayListAddRemove() {
-    for (var r = 0; r < REPS; r++) {
-      arrayList.add(0, 77);
-      arrayList.remove(0);
-    }
+    testListAddRemove(arrayList);
   }
 
   @Test
   public void testLinkedListAccess() {
-    var sum = 0L;
-    for (var r = 0; r < REPS; r++) {
-      sum += linkedList.get(r % SIZE);
-    }
+    testListAccess(linkedList);
   }
 
   @Test
   public void testArrayListAccess() {
-    var sum = 0L;
-    for (var r = 0; r < REPS; r++) {
-      sum += arrayList.get(r % SIZE);
-    }
+    testListAccess(arrayList);
   }
 }
