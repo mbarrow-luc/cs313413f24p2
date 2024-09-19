@@ -1,15 +1,13 @@
 package cs271.lab.list;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class TestList {
 
@@ -114,10 +112,8 @@ public class TestList {
     list.add(55);
     list.add(77);
     list.add(66);
-    // TODO using containsAll and List.of (see above),
-    // 1) assert that list contains all five different numbers added
-    // 2) assert that list does not contain all of 11, 22, and 33
-    fail("Not yet implemented"); // remove this line when done
+    assertTrue(list.containsAll(List.of(33, 44, 55, 66, 77)));
+    assertFalse(list.containsAll(List.of(11, 22, 33)));
   }
 
   @Test
