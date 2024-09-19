@@ -76,10 +76,8 @@ public class TestIterator {
         i.remove(); // TODO what happens if you use list.remove(Integer.valueOf(77))?
       }
     }
-    // TODO using assertEquals and List.of, express which values are left in the list
-    // See TestList.java for examples of how to use List.of; also see the Java List
-    // interface for more information
-    fail("Not yet implemented"); // remove this line when done
+    assertEquals(4, list.size());
+    assertTrue(list.containsAll(List.of(33, 44, 55, 66)));
   }
 
   @Test
