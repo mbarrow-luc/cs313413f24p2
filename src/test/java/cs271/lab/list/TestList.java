@@ -16,7 +16,8 @@ public class TestList {
   @Before
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
-    // TODO also try with a LinkedList - does it make any difference?
+    // list = new LinkedList<>();
+    // also try with a LinkedList - does it make any difference?
   }
 
   @After
@@ -89,13 +90,13 @@ public class TestList {
     list.add(5);
     list.add(77);
     list.add(6);
-    list.remove(5); // TODO what does this method do?
+    list.remove(5); // what does this method do?
     assertEquals(6, list.size());
     assertEquals(1, list.indexOf(77));
     assertEquals(3, list.lastIndexOf(77));
     assertEquals(4, list.get(2).intValue());
     assertEquals(77, list.get(3).intValue());
-    list.remove(Integer.valueOf(5)); // TODO what does this one do?
+    list.remove(Integer.valueOf(5)); // what does this one do?
     assertEquals(5, list.size());
     assertEquals(1, list.indexOf(77));
     assertEquals(3, list.lastIndexOf(77));

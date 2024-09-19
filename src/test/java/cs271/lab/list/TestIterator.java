@@ -7,6 +7,7 @@ import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import org.junit.After;
 import org.junit.Before;
@@ -20,7 +21,8 @@ public class TestIterator {
   @Before
   public void setUp() throws Exception {
     list = new ArrayList<Integer>();
-    // TODO also try with a LinkedList - does it make any difference?
+    // list = new LinkedList<>();
+    // also try with a LinkedList - does it make any difference?
   }
 
   @After
@@ -73,7 +75,7 @@ public class TestIterator {
     final var i = list.iterator();
     while (i.hasNext()) {
       if (i.next() == 77) {
-        i.remove(); // TODO what happens if you use list.remove(Integer.valueOf(77))?
+        i.remove(); // what happens if you use list.remove(Integer.valueOf(77))?
       }
     }
     assertEquals(4, list.size());
